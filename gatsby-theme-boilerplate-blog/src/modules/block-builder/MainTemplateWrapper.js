@@ -1,29 +1,29 @@
-import React from 'react'
+import React from "react";
 
-import SeoContainer from 'gatsby-layout-builder-seo'
-import { useSiteMetadatas } from '../../tools/useSiteMetadatas'
-import BoilerplateLogo from '@Images/boilerplate-blog-logo.svg'
+import SeoContainer from "gatsby-layout-builder-seo";
+import { useSiteMetadatas } from "../../tools/useSiteMetadatas";
+import BoilerplateLogo from "@Images/boilerplate-blog-logo.svg";
 
-import BodyBlock from '@BlockBuilder/BodyBlock'
-import HeaderBlock from '@BlockBuilder/HeaderBlock'
+import BodyBlock from "@BlockBuilder/BodyBlock";
+import HeaderBlock from "@BlockBuilder/HeaderBlock";
 
-import NewFooterBlock from '@BlockBuilder/NewFooterBlock'
+import FooterBlock from "@BlockBuilder/FooterBlock";
 
-const MainTemplateWrapper = ({ children, seoSchema, classes }) => {
-  const { githubImg, instaImg, twitterImg, whatsImg } = useSiteMetadatas()
+const MainTemplateWrapper = ({ children, seoSchema, classes, logo }) => {
+  const { githubImg, instaImg, twitterImg, whatsImg } = useSiteMetadatas();
   return (
     <BodyBlock opt={{ classes: classes }}>
       <SeoContainer opt={seoSchema} />
-      <HeaderBlock logotipoSvg={<BoilerplateLogo />} />
+      <HeaderBlock logotipoSvg={logo} />
       {children}
-      <NewFooterBlock
+      <FooterBlock
         githubImg={githubImg}
         instaImg={instaImg}
         twitterImg={twitterImg}
         whatsImg={whatsImg}
       />
     </BodyBlock>
-  )
-}
+  );
+};
 
-export default MainTemplateWrapper
+export default MainTemplateWrapper;

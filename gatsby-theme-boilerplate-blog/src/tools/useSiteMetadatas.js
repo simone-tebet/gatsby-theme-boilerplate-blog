@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from "gatsby";
 
 export const useSiteMetadatas = () =>
   useStaticQuery(
@@ -58,6 +58,18 @@ export const useSiteMetadatas = () =>
               }
               excerpt(pruneLength: 200)
             }
+          }
+        }
+        boilerplateLogo: file(
+          relativePath: { eq: "boilerplate-blog-logo.png" }
+        ) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 190
+              height: 75
+              placeholder: NONE
+              quality: 100
+            )
           }
         }
         imgHolder: file(relativePath: { eq: "boilerplate-squared.png" }) {
@@ -137,4 +149,4 @@ export const useSiteMetadatas = () =>
         }
       }
     `
-  )
+  );

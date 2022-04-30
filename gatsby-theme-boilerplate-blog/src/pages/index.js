@@ -1,93 +1,101 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from "react";
+import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-import Layout from 'gatsby-layout-builder'
+import { Row } from "../components/InsertRow";
 
-import { useSiteMetadatas } from '../tools/useSiteMetadatas'
-import PostsBlock from '@BlockBuilder/PostsBlock'
-import HeadingBlock from '@BlockBuilder/HeadingBlock'
+import { useSiteMetadatas } from "../tools/useSiteMetadatas";
+import PostsBlock from "@BlockBuilder/PostsBlock";
+import HeadingBlock from "@BlockBuilder/HeadingBlock";
 
-import MainTemplateWrapper from '@BlockBuilder/MainTemplateWrapper'
+import MainTemplateWrapper from "@BlockBuilder/MainTemplateWrapper";
 
-import { defaultSchema } from '../configs/schemas'
+import { defaultSchema } from "../configs/schemas";
 
 const IndexPage = props => {
-  const { site, bannerContent } = useSiteMetadatas()
-  const { data } = props
-  const posts = data.allMarkdownRemark.edges
+  const { site, bannerContent, boilerplateLogo } = useSiteMetadatas();
+  const { data } = props;
+  const posts = data.allMarkdownRemark.edges;
 
   const findItem = postsList => {
-    let x = []
+    let x = [];
     postsList.map(e => {
       if (e.node.frontmatter.featuredPost === true) {
-        x.push(e)
+        x.push(e);
       }
-    })
-    return x
-  }
-  const featuredPosts = findItem(posts)
+    });
+    return x;
+  };
+  console.log("boilerplateLogo");
+  console.log(boilerplateLogo);
+  const featuredPosts = findItem(posts);
+  const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
+  const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
+  console.log("logoQuery");
+  console.log(logoQuery);
   return (
-    <MainTemplateWrapper seoSchema={defaultSchema(props.location)}>
-      <Layout type="ROW" opt={{ classes: 'banner colorME', isBoxed: true }}>
-        <Layout
-          type="BLOCK_IMAGE"
-          opt={{
-            queryCard: bannerContent,
-            hasLink: true,
-            link: 'linkUrl',
-            staticImage: true,
-            publicImageUrl: bannerContent,
-            alt: 'title',
-            placeholder: 'NONE',
-            classes: '',
-          }}
+    <MainTemplateWrapper
+      logo={
+        <GatsbyImage
+          image={logoQuery}
+          alt={"title"}
+          placeholder={"NONE"}
+          critical='true'
+          className={""}
         />
-      </Layout>
-      <main className="main-container" id="site-content" role="list">
-        <HeadingBlock classes="m30auto hack" importance={9} width={400}>
+      }
+      seoSchema={defaultSchema(props.location)}
+    >
+      <Row
+        opt={{ classes: "banner colorME", isBoxed: true, role: "something" }}
+      >
+        <GatsbyImage
+          image={imageQuery}
+          alt={"title"}
+          placeholder={"NONE"}
+          critical='true'
+          className={""}
+        />
+      </Row>
+      <main className='main-container' id='site-content' role='list'>
+        <HeadingBlock classes='m30auto hack' importance={9} width={400}>
           Featured Posts
         </HeadingBlock>
-        <Layout
-          type="ROW"
-          opt={{ isBoxed: true, classes: 'main-container-wrapper' }}
-        >
+        <Row opt={{ isBoxed: true, classes: "main-container-wrapper" }}>
           <PostsBlock
             postsPerPage={site.siteMetadata.postsPerPage}
             postList={featuredPosts}
-            typeLoad={'push'} // or false
+            typeLoad={"push"} // or false
             // readMoreText="Ler Mais"
             pagination={{
               loadMoreBtn: true,
-              loadMore: 'Ler Mais',
+              loadMore: "Ler Mais",
             }}
-            classes="colorME"
+            classes='colorME'
           />
-        </Layout>
-        <HeadingBlock classes="m30auto" importance={9} width={400}>
+        </Row>
+        <HeadingBlock classes='m30auto' importance={9} width={400}>
           Posts
         </HeadingBlock>
-        <Layout
-          type="ROW"
-          opt={{ isBoxed: true, classes: 'main-container-wrapper' }}
-        >
+        <Row opt={{ isBoxed: true, classes: "main-container-wrapper" }}>
           <PostsBlock
             postsPerPage={site.siteMetadata.postsPerPage}
             postList={posts}
-            typeLoad={'push'} // or false
+            typeLoad={"push"} // or false
             // readMoreText="Ler Mais"
             pagination={{
               loadMoreBtn: true,
-              loadMore: 'Ler Mais',
+              loadMore: "Ler Mais",
             }}
-            classes="colorME"
+            classes='colorME'
           />
-        </Layout>
+        </Row>
       </main>
     </MainTemplateWrapper>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const queryAtividade = graphql`
   query {
@@ -121,4 +129,4 @@ export const queryAtividade = graphql`
       }
     }
   }
-`
+`;

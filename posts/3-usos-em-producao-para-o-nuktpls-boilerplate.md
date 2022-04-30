@@ -1,29 +1,24 @@
 ---
-title: 3 usos em produção para o Nüktpls:Boilerplate
-date: 2021-12-17T12:33:38+00:00
-author: Equipe Edu4Dev
+title: Simone Tebet Fans
+date: 2022-04-30T19:50:00+00:00
+author: Equipe Tebet.Fans
 categories:
-  - dicas
-  - tagthree
+  - staff
 featuredPost: true
-featuredImage: ../posts/images/placeholder-01.jpg
+featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
 ---
+Era 22 de setembro de 2021 em uma sessão da comissão parlamentar de inquérito que investigava temas relacionados ao vírus da COVID-19. Um dia depois de uma longa discussão exaltada entre a senadora Simone Tebet e o ministro da Controladoria-Geral da União (CGU), órgão do Governo Federal responsável pela defesa do patrimônio público, transparência e combate à corrupção. 
 
-Sair do zeroComeçar do zero é algo humanamente impossível e para alavancar a difusão de informação cibernetizada apresentamos o pré-moldado para industrialização na criação de **websítios**, **webblogs**, **aplicativos** e **e-commerce**, apresenteamos o NÜktpls:Boilerplate.
+## Descontrole não, profissionalismo e indignação!
 
-## Curadoria e Responsabilidade
+O ilustre ministro, Wagner Rosário, na data do dia 21, ou seja um dia antes o sr. Wagner tentou minorizar as palavras e lógica da senadora. Em um conhecido teatro onde corruptos e corruptores, da moral, antigamente gozavam o menosprezo alheio.
 
-O pré-moldado para websítios e aplicativos da web chamado boilerplate é feito com a tecnologia da Meta chamada ReactJS, também feito sob as tecnologias GatsbyJS, NodeJS, Javascript, HTML5, CSS3, WebPack, Markdown, NetlifyCMS, YAML, NÜktpls Modules e outras centenas de bibliotecas usadas diretamente, ou em conformidade com a lei de uso de softwares por meio de pacotes dependentes internos a pacotes usados no projeto.
+Os corruptores em sua maioria homem agem como supremacistas e buscam o "zombar" como forma de proteção. As ofensas foram muito bem respondidas no dia em questão por meio de uma fala que não será subestimada. Ao falar em defesa da mulher e de conhecidos meios de ataques machistas, Simone Tebet defendeu a pessoa humana.
 
-> Zumba
-> Agnóstica
+## Em defesa da legalidade e da humanidade
 
-O Instituto Organizacionista, sob o selo de sua iniciativa educacional **Edu4Dev** selecionou ao longo do ano de 2019 a 2022 tecnologias que reunem as modernidades que o mercado possui, mas que ao mesmo tempo tivessem maior lógica dentro do processo da criação de conteúdo no geral, não apenas no contexto do desenvolvedor web ou programador.
+Ouvir a senadora não me trouxe nenhuma sensação de adoração a nenhuma pessoa. O que ouvi e gostei foi a sua competência e postura sempre ética, quase que uma profissional da política.
 
-### **1. Blog em GatsbyJS e Netlify CMS**
+Senti ela humana em todas as ocasiões, presente em sua fala, dona de sua lógica e com essa inspiração resolvi acompanhar informações sobre a senadora Simone Tebet e compartilhar aqui com vocês o que eu achar pertinente.
 
-É um desafio muito grande migrar de plataforma administradora de Blog? A resposta está no trabalho feito para a Organização Boileplate.
-
-> Mal-feitores
-
-Com mais de uma centena de postagens, o desafio é colocar um novo blog no ar que seja desenhado para rodar no servidor Netlify (leia-se `Nétilifí`).
+Mais informações sobre informações na página de contatos.

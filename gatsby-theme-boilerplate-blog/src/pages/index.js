@@ -26,13 +26,9 @@ const IndexPage = props => {
     });
     return x;
   };
-  console.log("boilerplateLogo");
-  console.log(boilerplateLogo);
   const featuredPosts = findItem(posts);
   const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
-  console.log("logoQuery");
-  console.log(logoQuery);
   return (
     <MainTemplateWrapper
       logo={

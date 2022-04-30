@@ -1,13 +1,13 @@
 ---
-title: 3 usos em produção para o Nüktpls:Boilerplate
-date: 2021-12-17T12:33:38+00:00
-author: Equipe Edu4Dev
+title: Simone Tebet Fans
+date: 2022-04-30T19:50:00+00:00
+author: Equipe Tebet.Fans
 categories:
-  - dicas
-  - tagthree
+  - staff
 featuredPost: true
-featuredImage: ../posts/images/placeholder-01.jpg
+featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
 ---
+Era meados de setembro de 2021 em uma sessão da comissão parlamentar de inquerito, que investigava temas relacionados ao vírus da COVID-19. Depois de uma longa discussão exaltada entre ela e o mi
 
 Sair do zeroComeçar do zero é algo humanamente impossível e para alavancar a difusão de informação cibernetizada apresentamos o pré-moldado para industrialização na criação de **websítios**, **webblogs**, **aplicativos** e **e-commerce**, apresenteamos o NÜktpls:Boilerplate.
 

@@ -19,19 +19,19 @@
   },
   "organization": {
     "name": "Boileplate",
-    "url": "https://boilerplate-blog.netlify.app/",
+    "url": "https://simone-tebet.netlify.app/",
     "email": "descola@descola.com.br",
     "logo": "boilerplate-banner.png",
     "cardImage": "boilerplate-banner.png",
     "phone": "+5516981061234"
   },
-  "repository": "https://github.com/nuktpls/gatsby-theme-boilerplate-blog",
+  "repository": "https://github.com/simone-tebet/gatsby-theme-boilerplate-blog",
   "urlPrefix": "/",
   "appName": "Blog - Boileplate",
   "appLogic": "Blog",
   "dateCreated": "05 de março de 2022",
-  "siteUrl": "https://boilerplate-blog.netlify.app/",
-  "searchBaseUrl": "https://boilerplate-blog.netlify.app/cursos?search=",
+  "siteUrl": "https://simone-tebet.netlify.app/",
+  "searchBaseUrl": "https://simone-tebet.netlify.app/cursos?search=",
   "clientOrg": "Boileplate",
   "clientShortName": "Boileplate",
   "clientSocial": {

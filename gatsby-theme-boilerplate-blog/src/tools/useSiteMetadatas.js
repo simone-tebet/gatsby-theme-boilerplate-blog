@@ -169,8 +169,7 @@ export const useSiteMetadatas = () =>
         bannerContent: file(relativePath: { eq: "banner-content.png" }) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 950
-              height: 59
+              height: 80
               placeholder: NONE
               quality: 100
               backgroundColor: "transparent"

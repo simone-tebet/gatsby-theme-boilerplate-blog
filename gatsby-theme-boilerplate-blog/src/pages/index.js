@@ -61,11 +61,179 @@ const IndexPage = props => {
           alt={"title"}
           placeholder={"NONE"}
           critical='true'
-          className={""}
+          className={" banner-img"}
         />
       </Row>
 
       <main className='main-container' id='site-content' role='list'>
+        <HeadingBlock classes='m30auto hack' importance={10} width={400}>
+          Simone Tebet
+        </HeadingBlock>
+        <Row opt={{ classes: "home-infos", isBoxed: true, role: "something" }}>
+          <section className='main-page-wrapper'>
+            <Row opt={{ classes: "", numColumns: 2 }}>
+              <div className='main-article'>
+                <h4>Categoria X</h4>
+                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+                <Link to='/'>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit
+                  consectetur adipisicing elit
+                </Link>
+                <p>Atualizado tem um tempo já</p>
+                <div className='main-article-relatives'>
+                  <h2>Mussum ipsum dolor se lamentas dis aumentadis muito</h2>
+                  <ul>
+                    <li>
+                      <Link to='/'>
+                        Mussum ipsum dolor concretis de madeira
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to='/'>Ipsum di fraldis anamo potodética</Link>
+                    </li>
+                    <li>
+                      <Link to='/'>Bebidis causis dependencis</Link>
+                    </li>
+                    <li>
+                      <Link to='/'>Suanus como Thanos</Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className='home-profile-wrapper'>
+                <Row
+                  opt={{
+                    isBoxed: true,
+                    role: "something",
+                    classes: "home-profile home-profile-width",
+                    numColumns: 2,
+                  }}
+                >
+                  <div className='home-profile-left-column'>
+                    <p>
+                      <strong>Total Redundante de Seguidores: </strong>150
+                      <sup>*</sup>
+                    </p>
+                    <p>
+                      <strong>Intenção de votos: </strong>2%
+                    </p>
+                    <p>
+                      <strong>Coligação conhecida: </strong>MDB, PSDB, CNN
+                    </p>
+                    <p>
+                      <strong>Experiência política: </strong>30 anos
+                    </p>
+                    <div className='left-bottom'>
+                      <ul className='profile-anchor-menu'>
+                        <li>
+                          <Link to='#' className='active'>
+                            Histórico
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to='#'>Profissão</Link>
+                        </li>
+                        <li>
+                          <Link to='#'>Família</Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className='home-profile-right-column'>
+                    <div className='diamond-profile'>
+                      <GatsbyImage
+                        image={profileQuery}
+                        alt={"title"}
+                        placeholder={"NONE"}
+                        critical='true'
+                        className={"diamond-img"}
+                        style={{
+                          WebkitMaskImage: `url(${diamondQuery.images.fallback.src})`,
+                        }}
+                      />
+                      <GatsbyImage
+                        image={diamondBgQuery}
+                        alt={"title"}
+                        placeholder={"NONE"}
+                        critical='true'
+                        className={"diamond-background"}
+                        style={{
+                          width: "190px",
+                          height: "190px",
+                        }}
+                      />
+                    </div>
+                    <div className='home-profile-infos'>
+                      <Link to='/' className='profile-btn'>
+                        + Apoiar
+                      </Link>
+                      <Link to='/' className='profile-btn'>
+                        + Seguir
+                      </Link>
+                    </div>
+                  </div>
+                </Row>
+                <Row
+                  opt={{
+                    isBoxed: true,
+                    bgColor: "white",
+                    classes: "home-profile-bottom home-profile-width",
+                  }}
+                >
+                  <div className='home-profile-tab'>
+                    <h2>Histórico</h2>
+                    <p>
+                      Simone Tebet, 52 anos, é natural de Três Lagoas, Minas
+                      Gerais.
+                    </p>
+                    <p>
+                      Filha de um político de ascendência libanesa, que também
+                      foi professor, advogado, promotor de justiça, sociólogo.
+                    </p>
+                    <p>
+                      Destaca-se na política pelo seu notório saber jurídico e
+                      posicionamentos firmes. Simone é advogada, professora
+                      universitária e política. Formou-se em Direito pela
+                      Universidade Federal do Rio de Janeiro. É especialista em
+                      Ciência do Direito pela Escola Superior de Magistratura.
+                    </p>
+                  </div>
+                  <div className='hide-me'>
+                    <h2>Profissão</h2>
+                    <p>
+                      Começou sua vida profissional aos 22 anos como professora
+                      universitária em seu Estado, no ano de 1992, atividade que
+                      exerceu por 12 anos. Trabalhou na Universidade Federal de
+                      Mato Grosso do Sul, Universidade Católica Dom Bosco,
+                      Universidade para o Desenvolvimento do Estado e Região do
+                      Pantanal e Faculdades Integradas de Campo Grande.
+                    </p>
+                    <p>
+                      Foi consultora técnica jurídica da Assembleia Legislativa
+                      do Mato Grosso do Sul entre os anos de 1995 e 1997 e foi
+                      diretora técnica legislativa entre 1997 e 2001.
+                    </p>
+                  </div>
+                  <div className='hide-me'>
+                    <h2>Família Tebet</h2>
+                    <p>
+                      Tal como o pai, falecido, a filha possue vida pública por
+                      meio do Movimento Democrático Brasileiro (MDB). A senadora
+                      entrou efetivamente na política ao ser eleita aos 31 anos
+                      como Deputada Estadual, pelo então PMDB.
+                    </p>
+                    <p>
+                      Simone Tebet têm duas filhas e é casada com o político
+                      Eduardo Rocha, deputado estadual pelo estado do Mato
+                      Grosso do Sul. A declaração de bens de ambos é superior a
+                      3 milhões de reais.
+                    </p>
+                  </div>
+                </Row>
+              </div>
+            </Row>
+          </section>
+        </Row>
         <HeadingBlock classes='m30auto hack' importance={9} width={400}>
           Destaques da Simone
         </HeadingBlock>
@@ -82,97 +250,22 @@ const IndexPage = props => {
             classes='colorME'
           />
         </Row>
-        <HeadingBlock classes='m30auto hack' importance={10} width={400}>
-          Simone Tebet
+        <HeadingBlock classes='m30auto' importance={9} width={400}>
+          Crie o seu próprio site
         </HeadingBlock>
-        <Row opt={{ classes: "home-infos", isBoxed: true, role: "something" }}>
-          <section className='main-page-wrapper'>
-            <Row
-              opt={{
-                isBoxed: true,
-                role: "something",
-                classes: "home-profile",
-                numColumns: 2,
-              }}
-            >
-              <div className='home-profile-right-column'>
-                <div className='diamond-profile'>
-                  <GatsbyImage
-                    image={profileQuery}
-                    alt={"title"}
-                    placeholder={"NONE"}
-                    critical='true'
-                    className={"diamond-img"}
-                    style={{
-                      WebkitMaskImage: `url(${diamondQuery.images.fallback.src})`,
-                    }}
-                  />
-                  <GatsbyImage
-                    image={diamondBgQuery}
-                    alt={"title"}
-                    placeholder={"NONE"}
-                    critical='true'
-                    className={"diamond-background"}
-                    style={{
-                      width: "190px",
-                      height: "190px",
-                    }}
-                  />
-                </div>
-                <div className='home-profile-infos'>
-                  <Link to='/' className='profile-btn'>
-                    + Apoiar
-                  </Link>
-                  <Link to='/' className='profile-btn'>
-                    + Seguir
-                  </Link>
-                </div>
-              </div>
-            </Row>
-            <p>
-              Simone Tebet, 52 anos, é natural de Três Lagoas, Minas Gerais.
-            </p>
-            <h2>Histórico</h2>
-            <p>
-              Filha de um político de ascendência libanesa, que também foi
-              professor, advogado, promotor de justiça, sociólogo.
-              <br />
-              Destaca-se na política pelo seu notório saber jurídico e
-              posicionamentos firmes. Simone é advogada, professora
-              universitária e política. Formou-se em Direito pela Universidade
-              Federal do Rio de Janeiro. É especialista em Ciência do Direito
-              pela Escola Superior de Magistratura.
-            </p>
-            <h2>Profissão</h2>
-            <p>
-              Começou sua vida profissional aos 22 anos como professora
-              universitária em seu Estado, no ano de 1992, atividade que exerceu
-              por 12 anos. Trabalhou na Universidade Federal de Mato Grosso do
-              Sul, Universidade Católica Dom Bosco, Universidade para o
-              Desenvolvimento do Estado e Região do Pantanal e Faculdades
-              Integradas de Campo Grande.
-            </p>
-            <p>
-              Foi consultora técnica jurídica da Assembleia Legislativa do Mato
-              Grosso do Sul entre os anos de 1995 e 1997 e foi diretora técnica
-              legislativa entre 1997 e 2001.
-            </p>
-            <h2>Família Tebet</h2>
-            <p>
-              Tal como o pai, falecido, a filha possue vida pública por meio do
-              Movimento Democrático Brasileiro (MDB). A senadora entrou
-              efetivamente na política ao ser eleita aos 31 anos como Deputada
-              Estadual, pelo então PMDB.
-            </p>
-            <p>
-              Simone Tebet têm duas filhas e é casada com o político Eduardo
-              Rocha, deputado estadual pelo estado do Mato Grosso do Sul. A
-              declaração de bens de ambos é superior a 3 milhões de reais.
-            </p>
-          </section>
+        <Row
+          opt={{ classes: "banner colorME", isBoxed: true, role: "something" }}
+        >
+          <GatsbyImage
+            image={imageQuery}
+            alt={"title"}
+            placeholder={"NONE"}
+            critical='true'
+            className={" banner-img"}
+          />
         </Row>
         <HeadingBlock classes='m30auto' importance={9} width={400}>
-          Posts
+          Últimas Postagens
         </HeadingBlock>
         <Row opt={{ isBoxed: true, classes: "main-container-wrapper" }}>
           <PostsBlock

@@ -1,5 +1,5 @@
 ---
-title: Simone Tebet Fans
+title: Simone Tebet.Fans
 date: 2022-04-30T19:50:00+00:00
 author: Equipe Tebet.Fans
 categories:
@@ -7,7 +7,10 @@ categories:
 featuredPost: true
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
 ---
-Era 22 de setembro de 2021 em uma sessão da comissão parlamentar de inquérito que investigava temas relacionados ao vírus da COVID-19. Um dia depois de uma longa discussão exaltada entre a senadora Simone Tebet e o ministro da Controladoria-Geral da União (CGU), órgão do Governo Federal responsável pela defesa do patrimônio público, transparência e combate à corrupção. 
+
+22 de setembro de 2021 foi marcado pelo autêntico posicionamento da senadora Simone Tebet em uma sessão da comissão parlamentar de inquérito que investigava temas relacionados ao vírus da COVID-19.
+
+Um dia depois de uma longa discussão exaltada entre a senadora e o ministro da Controladoria-Geral da União (CGU), órgão do Governo Federal responsável pela defesa do patrimônio público, transparência e combate à corrupção.
 
 ## Descontrole não, profissionalismo e indignação!
 

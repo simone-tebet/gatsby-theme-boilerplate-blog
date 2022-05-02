@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-
+import React from "react";
+import { Link } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { BsSmartwatch } from "react-icons/bs";
 const PostCard = ({
   postImage,
   linkUrl,
@@ -10,19 +10,23 @@ const PostCard = ({
   readMoreText,
   classes,
 }) => {
-  const imageQuery = getImage(postImage.childrenImageSharp[0])
+  const imageQuery = getImage(postImage.childrenImageSharp[0]);
   return (
-    <div className="post-card" role="listitem" aria-label="Cartão de Postagem">
+    <div className='post-card' role='listitem' aria-label='Cartão de Postagem'>
       <Link to={linkUrl}>
         <GatsbyImage
           image={imageQuery}
-          alt={'title'}
-          placeholder={'NONE'}
-          critical="true"
+          alt={"title"}
+          placeholder={"NONE"}
+          critical='true'
           className={classes}
         />
       </Link>
-      <div className="post-card-content">
+      <div className='watch-later'>
+        <BsSmartwatch />
+        <span>Ler mais tarde</span>
+      </div>
+      <div className='post-card-content'>
         <Link to={linkUrl}>
           <h2>{title}</h2>
         </Link>
@@ -32,12 +36,12 @@ const PostCard = ({
           </Link>
         ) : null}
         {readMoreText === true ? (
-          <Link to={linkUrl} className="card-posts-link">
+          <Link to={linkUrl} className='card-posts-link'>
             <p>{readMoreText}</p>
           </Link>
         ) : null}
       </div>
     </div>
-  )
-}
-export default PostCard
+  );
+};
+export default PostCard;

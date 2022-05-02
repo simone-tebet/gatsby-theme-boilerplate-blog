@@ -1,13 +1,13 @@
 social_media:
   - item: {
-      href: https://br.linkedin.com/school/descola,
+      href: https://br.linkedin.com/school/tebetfans,
       icon: LinkedIn
     }
   - item: {
-      href: https://www.instagram.com/descolagram,
+      href: https://www.instagram.com/tebetfans,
       icon: Instagram
     }
   - item: {
-      href: https://www.facebook.com/descolasp,
+      href: https://www.facebook.com/tebetfans,
       icon: Facebook
     }

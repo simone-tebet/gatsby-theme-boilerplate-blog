@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 import _ from "lodash";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-import Layout from "gatsby-layout-builder";
 import { Row } from "../../components/InsertRow";
 
 const SinglePostBlock = ({
@@ -36,6 +35,10 @@ const SinglePostBlock = ({
           </div>
         </Row>
         <Row opt={{ isBoxed: true, classes: "main-post" }}>
+          <div className='close-btn-single-post'>
+            <Link to='/'>X</Link>
+            <span>Fechar</span>
+          </div>
           <div className='container'>
             <div className='post-author'>
               <Row opt={{ numColumns: 2, classes: "post-author-infos" }}>

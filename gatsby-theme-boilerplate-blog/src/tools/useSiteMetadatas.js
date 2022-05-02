@@ -72,6 +72,36 @@ export const useSiteMetadatas = () =>
             )
           }
         }
+        profileOficial: file(relativePath: { eq: "senadora-oficial.jpg" }) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 160
+              height: 160
+              placeholder: NONE
+              quality: 100
+            )
+          }
+        }
+        diamond: file(relativePath: { eq: "diamond.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 160
+              height: 160
+              placeholder: NONE
+              quality: 100
+            )
+          }
+        }
+        diamondBg: file(relativePath: { eq: "diamond-colored.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 190
+              height: 190
+              placeholder: NONE
+              quality: 100
+            )
+          }
+        }
         imgHolder: file(relativePath: { eq: "boilerplate-squared.png" }) {
           childrenImageSharp {
             gatsbyImageData(

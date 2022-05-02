@@ -3,14 +3,14 @@ menu:
   name: MAIN_MENU
   items:
     - item:
-        label: Componentes
-        href: /componentes
+        label: Biografia
+        href: /biografia
     - item:
-        label: Módulos
-        href: /modulos
+        label: Atos da Simone
+        href: /atos-simone
     - item:
-        label: Documentação
-        href: /documentacao
+        label: Discursos
+        href: /discursos
     - item:
         label: Contato
         to: /contato

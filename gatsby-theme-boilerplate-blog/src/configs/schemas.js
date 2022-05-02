@@ -1,8 +1,8 @@
-import { useSiteMetadatas } from '../tools/useSiteMetadatas'
-import { getSrc } from 'gatsby-plugin-image'
+import { useSiteMetadatas } from "../tools/useSiteMetadatas";
+import { getSrc } from "gatsby-plugin-image";
 
 const defaultSchema = location => {
-  const { cardImage, imgHolder, site } = useSiteMetadatas()
+  const { cardImage, imgHolder, site } = useSiteMetadatas();
 
   const {
     description,
@@ -11,9 +11,9 @@ const defaultSchema = location => {
     dateCreated,
     organization,
     themeColor,
-  } = site.siteMetadata
+  } = site.siteMetadata;
   return {
-    schemaType: 'Blog',
+    schemaType: "Blog",
     startedWebsiteDate: dateCreated,
     pageTitle: `Boileplate`,
     pageDescription: description,
@@ -26,33 +26,33 @@ const defaultSchema = location => {
     brandEmail: organization.email,
     brandName: organization.name,
     brandSocialArr: {
-      instagram: 'https://www.instagram.com/descola_',
-      facebook: 'https://www.facebook.com/descola_',
-      linkedIn: 'https://www.linkedin.com/company/descola_',
-      youtube: 'asd',
-      twitter: 'asd',
+      instagram: "https://www.instagram.com/tebetfans",
+      facebook: "https://www.facebook.com/tebetfans",
+      linkedIn: "https://www.linkedin.com/company/tebetfans",
+      youtube: "asd",
+      twitter: "asd",
     },
     buildServerUrl: siteUrl,
-    websiteLanguage: 'pt-BR',
+    websiteLanguage: "pt-BR",
     brandThemeColor: themeColor,
     brandKeywords: keywords,
     brandWebsiteUrl: siteUrl,
-    actualPage: siteUrl + location.pathname || '/',
-  }
-}
+    actualPage: siteUrl + location.pathname || "/",
+  };
+};
 
 const articleSchema = (data, location) => {
-  const { cardImage, imgHolder, site } = useSiteMetadatas()
-  const post = data.markdownRemark
+  const { cardImage, imgHolder, site } = useSiteMetadatas();
+  const post = data.markdownRemark;
   const {
     keywords,
     dateCreated,
     organization,
     themeColor,
     siteUrl,
-  } = site.siteMetadata
+  } = site.siteMetadata;
   return {
-    schemaType: 'article',
+    schemaType: "article",
     startedWebsiteDate: dateCreated,
     createdPageDate: post.frontmatter.date,
     pageTitle: `${post.frontmatter.title} - Boileplate`,
@@ -70,19 +70,19 @@ const articleSchema = (data, location) => {
     brandEmail: organization.email,
     brandName: organization.name,
     brandSocialArr: {
-      instagram: 'https://www.instagram.com/descola_',
-      facebook: 'https://www.facebook.com/descola_',
-      linkedIn: 'https://www.linkedin.com/company/descola_',
-      youtube: 'asd',
-      twitter: 'asd',
+      instagram: "https://www.instagram.com/tebetfans",
+      facebook: "https://www.facebook.com/tebetfans",
+      linkedIn: "https://www.linkedin.com/company/tebetfans",
+      youtube: "asd",
+      twitter: "asd",
     },
-    buildServerUrl: siteUrl || '/',
-    websiteLanguage: 'pt-BR',
+    buildServerUrl: siteUrl || "/",
+    websiteLanguage: "pt-BR",
     brandThemeColor: themeColor,
     brandKeywords: keywords,
     brandWebsiteUrl: siteUrl,
-    actualPage: siteUrl + location.pathname || '/',
-  }
-}
+    actualPage: siteUrl + location.pathname || "/",
+  };
+};
 
-export { defaultSchema, articleSchema }
+export { defaultSchema, articleSchema };

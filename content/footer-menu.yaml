@@ -17,7 +17,7 @@ footer_menu:
     }
   - item: {
       label: Blog,
-      href: https://blog.descola.org/
+      href: https://simone-tebet.netlify.app/
     }
   - item: {
       label: Contato,

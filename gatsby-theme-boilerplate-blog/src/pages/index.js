@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
@@ -13,6 +13,10 @@ import MainTemplateWrapper from "@BlockBuilder/MainTemplateWrapper";
 import { defaultSchema } from "../configs/schemas";
 
 const IndexPage = props => {
+  const [btnRef, setBtnRef] = useState("btn01");
+  const handleSetBtnRef = ref => {
+    setBtnRef(ref);
+  };
   const {
     site,
     bannerContent,
@@ -47,7 +51,10 @@ const IndexPage = props => {
   const instaGetImg = getImage(instaImg.childrenImageSharp[0]);
   const twitterGetImg = getImage(twitterImg.childrenImageSharp[0]);
   const whatsGetImg = getImage(whatsImg.childrenImageSharp[0]);
-
+  const btnHandler = btn => {
+    handleSetBtnRef(btn);
+    console.log("click ", btnRef);
+  };
   return (
     <MainTemplateWrapper
       logo={
@@ -114,7 +121,7 @@ const IndexPage = props => {
                   </ul>
                 </div>
               </div>
-              <div className='home-profile-wrapper'>
+              <div id='perfil' className='home-profile-wrapper'>
                 <Row
                   opt={{
                     isBoxed: true,
@@ -169,15 +176,37 @@ const IndexPage = props => {
                     <div className='left-bottom'>
                       <ul className='profile-anchor-menu'>
                         <li>
-                          <Link to='#' className='active'>
+                          <Link
+                            to='/#perfil'
+                            className={`btn01 ${
+                              btnRef === "btn01" ? "active" : ""
+                            }`}
+                            onClick={() => btnHandler("btn01")}
+                          >
                             Histórico
                           </Link>
                         </li>
                         <li>
-                          <Link to='#'>Profissão</Link>
+                          <Link
+                            to='/#perfil'
+                            className={`btn02 ${
+                              btnRef === "btn02" ? "active" : ""
+                            }`}
+                            onClick={() => btnHandler("btn02")}
+                          >
+                            Profissão
+                          </Link>
                         </li>
                         <li>
-                          <Link to='#'>Família</Link>
+                          <Link
+                            to='/#perfil'
+                            className={`btn03 ${
+                              btnRef === "btn03" ? "active" : ""
+                            }`}
+                            onClick={() => btnHandler("btn03")}
+                          >
+                            Família
+                          </Link>
                         </li>
                       </ul>
                     </div>
@@ -223,7 +252,11 @@ const IndexPage = props => {
                     classes: "home-profile-bottom home-profile-width",
                   }}
                 >
-                  <div className='home-profile-tab'>
+                  <div
+                    className={`home-profile-tab ${
+                      btnRef === "btn01" ? "" : "hide-me"
+                    }`}
+                  >
                     <h2>Histórico</h2>
                     <p>
                       Simone Tebet, 52 anos, é natural de Três Lagoas, Minas
@@ -241,7 +274,11 @@ const IndexPage = props => {
                       Ciência do Direito pela Escola Superior de Magistratura.
                     </p>
                   </div>
-                  <div className='hide-me'>
+                  <div
+                    className={`home-profile-tab ${
+                      btnRef === "btn02" ? "" : "hide-me"
+                    }`}
+                  >
                     <h2>Profissão</h2>
                     <p>
                       Começou sua vida profissional aos 22 anos como professora
@@ -257,7 +294,11 @@ const IndexPage = props => {
                       diretora técnica legislativa entre 1997 e 2001.
                     </p>
                   </div>
-                  <div className='hide-me'>
+                  <div
+                    className={`home-profile-tab ${
+                      btnRef === "btn03" ? "" : "hide-me"
+                    }`}
+                  >
                     <h2>Família Tebet</h2>
                     <p>
                       Tal como o pai, falecido, a filha possue vida pública por

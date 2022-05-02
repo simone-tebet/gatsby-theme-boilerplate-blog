@@ -441,7 +441,7 @@ img{
 				color: white;
 				font-family: $third__font;
 				font-size: 16px;
-				padding: 6px 10px;
+				padding: 8px 10px 6px;
 				border-radius: 4px 4px 0 0;
 				text-shadow: 0 2px 1px $primary_dark;
 				&:hover, &.active{
@@ -491,6 +491,9 @@ img{
 				font-size: 20px;
 				font-family: $third__font;
 				font-weight: 600;
+				&:hover{
+					color: $primary_dark;
+				}
 			}
 		}
 		h1{
@@ -499,6 +502,9 @@ img{
 			margin: 5px 0 15px;
 			a{
 				color: black;
+				&:hover{
+					color: $primary_dark;
+				}
 			}
 		}
 		a.main-article-caption{
@@ -506,6 +512,9 @@ img{
 			font-size: 20px;
 			font-family: $third__font;
 			font-weight: 400;
+			&:hover{
+				color: $primary_dark;
+			}
 		}
 		p{
 			color: $cta__contrast_color;
@@ -535,6 +544,9 @@ img{
 				font-size: 28px;
 				line-height: 28px;
 				font-family: $third__font;
+				&:hover{
+					color: $primary_dark;
+				}
 			}
 			ul {
 				margin-left: 30px;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
@@ -13,8 +13,6 @@ import MainTemplateWrapper from "@BlockBuilder/MainTemplateWrapper";
 import { defaultSchema } from "../configs/schemas";
 
 const IndexPage = props => {
-  // const [showButton, setShowButton] = useState(true);
-  // const [prompt, setPrompt] = useState();
   const {
     site,
     bannerContent,
@@ -41,48 +39,6 @@ const IndexPage = props => {
   const profileQuery = getImage(profileOficial.childrenImageSharp[0]);
   const diamondQuery = getImage(diamond.childrenImageSharp[0]);
   const diamondBgQuery = getImage(diamondBg.childrenImageSharp[0]);
-  console.log("diamondQuery");
-  console.log(diamondQuery.images.fallback.src);
-
-  // useEffect(() => {
-  //   const handle_storePrompt = e => {
-  //     e.preventDefault();
-  //     if (showButton) setPrompt(e);
-  //   };
-
-  //   window.addEventListener("beforeinstallprompt", e => handle_storePrompt(e));
-
-  //   return _ => {
-  //     window.removeEventListener("beforeinstallprompt", e =>
-  //       handle_storePrompt(e)
-  //     );
-  //   };
-  // }, [showButton]);
-
-  // const handle_prompt = _ => {
-  //   console.log("eita caraio");
-  //   console.log(_);
-  //   setShowButton(false);
-  //   console.log(prompt);
-  //   // prompt.prompt();
-  //   // prompt.userChoice.then((choiceResult) => {
-  //   //   if (choiceResult.outcome === 'accepted') {
-  //   //     console.log('User accepted the A2HS prompt');
-  //   //   } else {
-  //   //     console.log('User dismissed the A2HS prompt');
-  //   //   }
-  //   //   setPrompt(null);
-  //   // })
-  // };
-
-  // const btnInstall = (
-  //   <button
-  //     onClick={handle_prompt}
-  //     style={{ display: `${showButton === true ? "block" : "none"}` }}
-  //   >
-  //     <small>Click to Install</small>
-  //   </button>
-  // );
 
   return (
     <MainTemplateWrapper

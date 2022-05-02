@@ -20,6 +20,10 @@ const IndexPage = props => {
     profileOficial,
     diamond,
     diamondBg,
+    githubImg,
+    instaImg,
+    twitterImg,
+    whatsImg,
   } = useSiteMetadatas();
   const { data } = props;
   const posts = data.allMarkdownRemark.edges;
@@ -39,6 +43,10 @@ const IndexPage = props => {
   const profileQuery = getImage(profileOficial.childrenImageSharp[0]);
   const diamondQuery = getImage(diamond.childrenImageSharp[0]);
   const diamondBgQuery = getImage(diamondBg.childrenImageSharp[0]);
+  const githubGetImg = getImage(githubImg.childrenImageSharp[0]);
+  const instaGetImg = getImage(instaImg.childrenImageSharp[0]);
+  const twitterGetImg = getImage(twitterImg.childrenImageSharp[0]);
+  const whatsGetImg = getImage(whatsImg.childrenImageSharp[0]);
 
   return (
     <MainTemplateWrapper
@@ -73,13 +81,19 @@ const IndexPage = props => {
           <section className='main-page-wrapper'>
             <Row opt={{ classes: "", numColumns: 2 }}>
               <div className='main-article'>
-                <h4>Categoria X</h4>
-                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
-                <Link to='/'>
+                <h4>
+                  <Link to='/'>Categoria X</Link>
+                </h4>
+                <h1>
+                  <Link to='/'>
+                    Morem ipsum dolor sit amet consectetur adipisicing elit
+                  </Link>
+                </h1>
+                <Link to='/' className='main-article-caption'>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit
                   consectetur adipisicing elit
                 </Link>
-                <p>Atualizado tem um tempo já</p>
+                <p>Atualizado tem um tempo atrás</p>
                 <div className='main-article-relatives'>
                   <h2>Mussum ipsum dolor se lamentas dis aumentadis muito</h2>
                   <ul>
@@ -123,6 +137,35 @@ const IndexPage = props => {
                     <p>
                       <strong>Experiência política: </strong>30 anos
                     </p>
+                    <GatsbyImage
+                      image={githubGetImg}
+                      alt={"title"}
+                      placeholder={"NONE"}
+                      critical='true'
+                      className={" profile-socials"}
+                    />
+                    <GatsbyImage
+                      image={instaGetImg}
+                      alt={"title"}
+                      placeholder={"NONE"}
+                      critical='true'
+                      className={" profile-socials"}
+                    />
+                    <GatsbyImage
+                      image={twitterGetImg}
+                      alt={"title"}
+                      placeholder={"NONE"}
+                      critical='true'
+                      className={" profile-socials"}
+                    />
+                    <GatsbyImage
+                      image={whatsGetImg}
+                      alt={"title"}
+                      placeholder={"NONE"}
+                      critical='true'
+                      className={" profile-socials"}
+                    />
+
                     <div className='left-bottom'>
                       <ul className='profile-anchor-menu'>
                         <li>

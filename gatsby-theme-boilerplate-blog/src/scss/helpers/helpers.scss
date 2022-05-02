@@ -477,3 +477,92 @@ img{
 	.home-profile-bottom{
 		border-radius: 0 0 5px 5px;
 	}
+	
+	.profile-socials{
+	width: 28px;
+	margin: 10px 10px 0;
+	}
+
+
+	.main-article{
+		h4{
+			a{
+				color: $primary;
+				font-size: 20px;
+				font-family: $third__font;
+				font-weight: 600;
+			}
+		}
+		h1{
+			line-height: 50px;
+			font-size: 42px;
+			margin: 5px 0 15px;
+			a{
+				color: black;
+			}
+		}
+		a.main-article-caption{
+			color: #666666;
+			font-size: 20px;
+			font-family: $third__font;
+			font-weight: 400;
+		}
+		p{
+			color: $cta__contrast_color;
+			margin-left: 20px;
+			margin-top: 10px;
+			font-size: 14px;
+			line-height: 28px;
+			font-family: $third__font;
+			text-transform: uppercase;
+			&:before{
+				content: '';
+				margin-left: -20px;
+				display: block;
+				width: 10px;
+				height: 10px;
+				background-color: $cta__contrast_color;
+				border-radius: 50%;
+				float: left;
+				top: 7px;
+    		position: relative;
+			}
+		}
+		.main-article-relatives{
+			padding: 20px;
+			h2{
+				margin-top: 20px;
+				font-size: 28px;
+				line-height: 28px;
+				font-family: $third__font;
+			}
+			ul {
+				margin-left: 30px;
+				margin-top: 20px;
+				li {
+					margin: 5px 0;
+				list-style: none;
+				&:before {
+					content: "\2022";
+					color: $primary_dark;
+					font-weight: bold;
+					display: inline-block; 
+					width: 1em;
+					margin-left: -1em;
+				}
+				&:hover{
+					&:before{
+						color: $primary;
+					}
+				}
+				a{
+				color: $primary_dark;
+				font-size: 17px;
+				font-family: $third__font;
+				font-weight: 400;
+				&:hover{
+					color: $primary;
+				}
+			}}}
+		}
+	}

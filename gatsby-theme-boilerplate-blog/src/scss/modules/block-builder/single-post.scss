@@ -86,10 +86,8 @@
 		&:hover{
 			background-color: $primary_dark;
 			span{
-		color: $primary_background;
-
+				color: $primary_background;
 				font-size: 12px;
-				z-index: 9;
 				line-height: 22px;
 				position: absolute;
 				text-align: center;

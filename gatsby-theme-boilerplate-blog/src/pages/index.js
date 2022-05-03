@@ -103,14 +103,65 @@ const IndexPage = props => {
   const twitterGetImg = getImage(twitterImg.childrenImageSharp[0]);
   const whatsGetImg = getImage(whatsImg.childrenImageSharp[0]);
 
-  var updatedDate = new Date(homeHighlightPost[0].node.frontmatter.updated);
+  var updatedDate = new Date(
+    homeHighlightPost[0].node.frontmatter.updatedModified
+  );
   var now = new Date();
+  var newUpdatedTime =
+    Date.parse(homeHighlightPost[0].node.frontmatter.updated) / 1000;
+  var otherNewHour = new Date().getTime() / 1000 - 3600;
+  var nowDate = Date.now();
+  var diff = parseInt((now - updatedDate) / 1000);
+  var diffHours = parseInt(diff / 3600);
+  var diffMinutes = parseInt((diff / 60) % 60);
   var hours = updatedDate.getHours();
   var mins = updatedDate.getMinutes();
   var secs = updatedDate.getSeconds();
+
   var difference_In_Time = now.getTime() - updatedDate.getTime();
   var difference_In_Days = difference_In_Time / (1000 * 60 * 60 * 24);
+  var difference_In_Seconds = difference_In_Time / 1000;
+  var difference_In_Minutes = difference_In_Time / (1000 * 60);
+  var difference_In_Hours = difference_In_Time / (1000 * 60 * 60);
   var countOneDay = difference_In_Days >= 1 ? true : false;
+
+  function convertNumToTime(number, returnType) {
+    // Check sign of given number
+    var sign = number >= 0 ? 1 : -1;
+
+    // Set positive value of number of sign negative
+    number = number * sign;
+
+    // Separate the int from the decimal part
+    var hour = Math.floor(number);
+    var decpart = number - hour;
+
+    var min = 1 / 60;
+    // Round to nearest minute
+    decpart = min * Math.round(decpart / min);
+
+    var minute = Math.floor(decpart * 60) + "";
+
+    // Add padding if need
+    if (minute.length < 2) {
+      minute = "0" + minute;
+    }
+
+    if (minute === "60") {
+      minute = "59";
+    }
+
+    // Add Sign in final result
+
+    // Concate hours and minutes
+
+    return returnType === "hours" ? hour : minute;
+  }
+
+  const hourLegend = diffHours === 1 ? "hora e" : " horas e";
+  const hoursCaption =
+    diffHours === 0 ? "" : diffHours + " " + hourLegend + " ";
+
   return (
     <MainTemplateWrapper
       logo={
@@ -168,13 +219,10 @@ const IndexPage = props => {
                 ></Link>
                 {countOneDay === false ? (
                   <p>
-                    Atualizado{" "}
-                    {hours +
-                      " horas, " +
-                      mins +
-                      " minutos e " +
-                      secs +
-                      " segundos atrás"}
+                    Atualizado à{" "}
+                    {hoursCaption +
+                      convertNumToTime(difference_In_Hours, "minutes") +
+                      " minutos atrás"}
                   </p>
                 ) : (
                   ""
@@ -464,6 +512,7 @@ export const queryAtividade = graphql`
           frontmatter {
             date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
             updated: date
+            updatedModified: date(formatString: "YYYY-MM-DDTHH:mm:SS")
             title
             headline
             categories

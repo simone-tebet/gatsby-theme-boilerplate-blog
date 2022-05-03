@@ -1,7 +1,7 @@
 ---
 title: O pré-moldado para websítios
 headline: Os pré-moldades chegaram para ficar no meio industrial
-date: 2022-05-03T10:33:38+00:00
+date: 2022-05-03T19:28:00+00:00
 author: Equipe Edu4Dev
 categories:
   - dicas

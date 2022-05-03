@@ -1,17 +1,17 @@
-import React from 'react'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import React from "react";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-import { Row } from '../../components/InsertRow'
+import { Row } from "../../components/InsertRow";
 
-import SeoContainer from 'gatsby-layout-builder-seo'
-import HeadingBlock from '@BlockBuilder/HeadingBlock'
-import { useSiteMetadatas } from '../../tools/useSiteMetadatas'
-import BoilerplateLogo from '@Images/boilerplate-blog-logo.svg'
+import SeoContainer from "gatsby-layout-builder-seo";
+import HeadingBlock from "@BlockBuilder/HeadingBlock";
+import { useSiteMetadatas } from "../../tools/useSiteMetadatas";
+import BoilerplateLogo from "@Images/boilerplate-blog-logo.svg";
 
-import BodyBlock from '@BlockBuilder/BodyBlock'
-import HeaderBlock from '@BlockBuilder/HeaderBlock'
+import BodyBlock from "@BlockBuilder/BodyBlock";
+import HeaderBlock from "@BlockBuilder/HeaderBlock";
 
-import FooterBlock from '@BlockBuilder/FooterBlock'
+import FooterBlock from "@BlockBuilder/FooterBlock";
 
 const MainPageWrapper = ({ children, title, seoSchema, classes }) => {
   const {
@@ -20,30 +20,43 @@ const MainPageWrapper = ({ children, title, seoSchema, classes }) => {
     twitterImg,
     whatsImg,
     bannerContent,
-  } = useSiteMetadatas()
-  const imageQuery = getImage(bannerContent.childrenImageSharp[0])
+    boilerplateLogo,
+  } = useSiteMetadatas();
+  const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
+  const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
 
   return (
     <BodyBlock opt={{ classes: classes }}>
       <SeoContainer opt={seoSchema} />
-      <HeaderBlock logotipoSvg={<BoilerplateLogo />} />
-      <Row opt={{ classes: 'banner colorME', isBoxed: true }}>
+
+      <HeaderBlock
+        logotipoSvg={
+          <GatsbyImage
+            image={logoQuery}
+            alt={"title"}
+            placeholder={"NONE"}
+            critical='true'
+            className={""}
+          />
+        }
+      />
+      <Row opt={{ classes: "banner colorME", isBoxed: true }}>
         <GatsbyImage
           image={imageQuery}
-          alt={'Imagem em Destaque'}
-          placeholder={'NONE'}
-          critical="true"
-          className={'highlight-img'}
+          alt={"Imagem em Destaque"}
+          placeholder={"NONE"}
+          critical='true'
+          className={"highlight-img"}
         />
       </Row>
-      <main className="main-container" id="site-content" role="list">
-        <HeadingBlock classes="m30auto" importance={9} width={400}>
+      <main className='main-container' id='site-content' role='list'>
+        <HeadingBlock classes='m30auto' importance={9} width={400}>
           {title}
         </HeadingBlock>
         <Row
           opt={{
             isBoxed: true,
-            classes: 'main-container-wrapper page-container',
+            classes: "main-container-wrapper page-container",
           }}
         >
           {children}
@@ -56,7 +69,7 @@ const MainPageWrapper = ({ children, title, seoSchema, classes }) => {
         whatsImg={whatsImg}
       />
     </BodyBlock>
-  )
-}
+  );
+};
 
-export default MainPageWrapper
+export default MainPageWrapper;

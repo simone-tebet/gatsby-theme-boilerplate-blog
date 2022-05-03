@@ -17,6 +17,10 @@ const IndexPage = props => {
   const handleSetBtnRef = ref => {
     setBtnRef(ref);
   };
+  const btnHandler = btn => {
+    handleSetBtnRef(btn);
+  };
+
   const {
     site,
     bannerContent,
@@ -98,31 +102,14 @@ const IndexPage = props => {
   const instaGetImg = getImage(instaImg.childrenImageSharp[0]);
   const twitterGetImg = getImage(twitterImg.childrenImageSharp[0]);
   const whatsGetImg = getImage(whatsImg.childrenImageSharp[0]);
-  const btnHandler = btn => {
-    handleSetBtnRef(btn);
-    console.log("click ", btnRef);
-  };
-  console.log("homeHighlightPost");
-  console.log(homeHighlightPost[0].node.frontmatter.title);
-  console.log(homeHighlightPost[0].node.fields.slug);
-  console.log("homeHighlightRelatedPost");
-  console.log(homeHighlightRelatedPost);
-  console.log("homeHighlightRelatedListPost");
-  console.log(homeHighlightRelatedListPost);
-  console.log("featuredPosts");
-  console.log(featuredPosts);
+
   var updatedDate = new Date(homeHighlightPost[0].node.frontmatter.updated);
   var now = new Date();
   var hours = updatedDate.getHours();
   var mins = updatedDate.getMinutes();
   var secs = updatedDate.getSeconds();
   var difference_In_Time = now.getTime() - updatedDate.getTime();
-  var difference_In_Seconds = difference_In_Time / 1000;
-  var difference_In_Minutes = difference_In_Time / (1000 * 60);
-  var difference_In_Hours = difference_In_Time / (1000 * 60 * 60);
   var difference_In_Days = difference_In_Time / (1000 * 60 * 60 * 24);
-  var difference_In_Weeks = difference_In_Time / (1000 * 60 * 60 * 24 * 7);
-  var difference_In_Months = difference_In_Time / (1000 * 60 * 60 * 24 * 30);
   var countOneDay = difference_In_Days >= 1 ? true : false;
   return (
     <MainTemplateWrapper

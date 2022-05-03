@@ -1,11 +1,15 @@
 ---
-title: Simone Tebet.Fans
+title: Bem-vind@s ao Simone Tebet.Fans
+headline: Os pré-moldades chegaram para ficar no meio industrial
 date: 2022-04-30T19:50:00+00:00
 author: Equipe Tebet.Fans
 categories:
   - staff
 featuredPost: true
 featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
+homeHighlight: false
+homeHighlightRelated: true
+homeHighlightRelatedList: false
 ---
 
 22 de setembro de 2021 foi marcado pelo autêntico posicionamento da senadora Simone Tebet em uma sessão da comissão parlamentar de inquérito que investigava temas relacionados ao vírus da COVID-19.

@@ -32,16 +32,63 @@ const IndexPage = props => {
   const { data } = props;
   const posts = data.allMarkdownRemark.edges;
 
-  const findItem = postsList => {
-    let x = [];
+  const findItemFeatured = postsList => {
+    let x = null;
+
+    x = [];
     postsList.map(e => {
       if (e.node.frontmatter.featuredPost === true) {
         x.push(e);
       }
     });
+
     return x;
   };
-  const featuredPosts = findItem(posts);
+
+  const findItemhomeHighlight = postsList => {
+    let x = null;
+
+    x = [];
+    postsList.map(e => {
+      console.log(e.node.frontmatter);
+      if (e.node.frontmatter.homeHighlight === true) {
+        x.push(e);
+      }
+    });
+
+    return x;
+  };
+
+  const findItemhomeHighlightRelated = postsList => {
+    let x = null;
+
+    x = [];
+    postsList.map(e => {
+      if (e.node.frontmatter.homeHighlightRelated === true) {
+        x.push(e);
+      }
+    });
+
+    return x;
+  };
+
+  const findItemhomeHighlightRelatedList = postsList => {
+    let x = null;
+
+    x = [];
+    postsList.map(e => {
+      if (e.node.frontmatter.homeHighlightRelatedList === true) {
+        x.push(e);
+      }
+    });
+
+    return x;
+  };
+
+  const featuredPosts = findItemFeatured(posts);
+  const homeHighlightPost = findItemhomeHighlight(posts);
+  const homeHighlightRelatedPost = findItemhomeHighlightRelated(posts);
+  const homeHighlightRelatedListPost = findItemhomeHighlightRelatedList(posts);
   const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const profileQuery = getImage(profileOficial.childrenImageSharp[0]);
@@ -55,6 +102,28 @@ const IndexPage = props => {
     handleSetBtnRef(btn);
     console.log("click ", btnRef);
   };
+  console.log("homeHighlightPost");
+  console.log(homeHighlightPost[0].node.frontmatter.title);
+  console.log(homeHighlightPost[0].node.fields.slug);
+  console.log("homeHighlightRelatedPost");
+  console.log(homeHighlightRelatedPost);
+  console.log("homeHighlightRelatedListPost");
+  console.log(homeHighlightRelatedListPost);
+  console.log("featuredPosts");
+  console.log(featuredPosts);
+  var updatedDate = new Date(homeHighlightPost[0].node.frontmatter.updated);
+  var now = new Date();
+  var hours = updatedDate.getHours();
+  var mins = updatedDate.getMinutes();
+  var secs = updatedDate.getSeconds();
+  var difference_In_Time = now.getTime() - updatedDate.getTime();
+  var difference_In_Seconds = difference_In_Time / 1000;
+  var difference_In_Minutes = difference_In_Time / (1000 * 60);
+  var difference_In_Hours = difference_In_Time / (1000 * 60 * 60);
+  var difference_In_Days = difference_In_Time / (1000 * 60 * 60 * 24);
+  var difference_In_Weeks = difference_In_Time / (1000 * 60 * 60 * 24 * 7);
+  var difference_In_Months = difference_In_Time / (1000 * 60 * 60 * 24 * 30);
+  var countOneDay = difference_In_Days >= 1 ? true : false;
   return (
     <MainTemplateWrapper
       logo={
@@ -81,6 +150,7 @@ const IndexPage = props => {
       </Row>
 
       <main className='main-container' id='site-content' role='list'>
+        <span id='perfil' />
         <HeadingBlock classes='m30auto hack' importance={10} width={400}>
           Simone Tebet
         </HeadingBlock>
@@ -89,39 +159,61 @@ const IndexPage = props => {
             <Row opt={{ classes: "", numColumns: 2 }}>
               <div className='main-article'>
                 <h4>
-                  <Link to='/'>Categoria X</Link>
+                  {homeHighlightPost[0].node.frontmatter.categories.map(el => {
+                    return (
+                      <Link
+                        to={"/category/" + el}
+                        className='main-article-categories'
+                      >
+                        {el}
+                      </Link>
+                    );
+                  })}
                 </h4>
                 <h1>
-                  <Link to='/'>
-                    Morem ipsum dolor sit amet consectetur adipisicing elit
+                  <Link to={homeHighlightPost[0].node.fields.slug}>
+                    {homeHighlightPost[0].node.frontmatter.title}
                   </Link>
                 </h1>
-                <Link to='/' className='main-article-caption'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit
-                  consectetur adipisicing elit
-                </Link>
-                <p>Atualizado tem um tempo atrás</p>
+                <Link
+                  to={homeHighlightPost[0].node.fields.slug}
+                  className='main-article-caption'
+                ></Link>
+                {countOneDay === false ? (
+                  <p>
+                    Atualizado{" "}
+                    {hours +
+                      " horas, " +
+                      mins +
+                      " minutos e " +
+                      secs +
+                      " segundos atrás"}
+                  </p>
+                ) : (
+                  ""
+                )}
+
                 <div className='main-article-relatives'>
-                  <h2>Mussum ipsum dolor se lamentas dis aumentadis muito</h2>
+                  <h2>
+                    <Link to={homeHighlightRelatedPost[0].node.fields.slug}>
+                      {homeHighlightRelatedPost[0].node.frontmatter.title}
+                    </Link>
+                  </h2>
+
                   <ul>
-                    <li>
-                      <Link to='/'>
-                        Mussum ipsum dolor concretis de madeira
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to='/'>Ipsum di fraldis anamo potodética</Link>
-                    </li>
-                    <li>
-                      <Link to='/'>Bebidis causis dependencis</Link>
-                    </li>
-                    <li>
-                      <Link to='/'>Suanus como Thanos</Link>
-                    </li>
+                    {homeHighlightRelatedListPost.map(e => {
+                      return (
+                        <li>
+                          <Link to={e.node.fields.slug}>
+                            {e.node.frontmatter.title}
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
-              <div id='perfil' className='home-profile-wrapper'>
+              <div className='home-profile-wrapper'>
                 <Row
                   opt={{
                     isBoxed: true,
@@ -176,37 +268,37 @@ const IndexPage = props => {
                     <div className='left-bottom'>
                       <ul className='profile-anchor-menu'>
                         <li>
-                          <Link
-                            to='/#perfil'
+                          <a
+                            href='/#perfil'
                             className={`btn01 ${
                               btnRef === "btn01" ? "active" : ""
                             }`}
                             onClick={() => btnHandler("btn01")}
                           >
                             Histórico
-                          </Link>
+                          </a>
                         </li>
                         <li>
-                          <Link
-                            to='/#perfil'
+                          <a
+                            href='/#perfil'
                             className={`btn02 ${
                               btnRef === "btn02" ? "active" : ""
                             }`}
                             onClick={() => btnHandler("btn02")}
                           >
                             Profissão
-                          </Link>
+                          </a>
                         </li>
                         <li>
-                          <Link
-                            to='/#perfil'
+                          <a
+                            href='/#perfil'
                             className={`btn03 ${
                               btnRef === "btn03" ? "active" : ""
                             }`}
                             onClick={() => btnHandler("btn03")}
                           >
                             Família
-                          </Link>
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -384,9 +476,14 @@ export const queryAtividade = graphql`
           }
           frontmatter {
             date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
+            updated: date
             title
+            headline
             categories
             featuredPost
+            homeHighlight
+            homeHighlightRelated
+            homeHighlightRelatedList
             featuredImage {
               childrenImageSharp {
                 gatsbyImageData(

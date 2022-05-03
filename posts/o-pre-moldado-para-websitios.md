@@ -1,12 +1,16 @@
 ---
 title: O pré-moldado para websítios
-date: 2021-12-17T12:33:38+00:00
+headline: Os pré-moldades chegaram para ficar no meio industrial
+date: 2022-05-03T10:33:38+00:00
 author: Equipe Edu4Dev
 categories:
   - dicas
   - tagthree
 featuredPost: true
 featuredImage: ../posts/images/placeholder-01.jpg
+homeHighlight: true
+homeHighlightRelated: false
+homeHighlightRelatedList: false
 ---
 
 O pré-moldado para websítios e aplicativos da web chamado boilerplate é feito com a tecnologia da Meta chamada ReactJS, também feito sob as tecnologias GatsbyJS, NodeJS, Javascript, HTML5, CSS3, WebPack, Markdown, NetlifyCMS, YAML, NÜktpls Modules e outras centenas de bibliotecas usadas diretamente, ou em conformidade com a lei de uso de softwares por meio de pacotes dependentes internos a pacotes usados no projeto.

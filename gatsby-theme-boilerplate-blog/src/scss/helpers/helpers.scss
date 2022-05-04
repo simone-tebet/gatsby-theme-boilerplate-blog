@@ -393,8 +393,11 @@ img{
 		.home-profile-left-column{
 			left: 30px;
 			margin-top: 20px;
+			position: relative;
+			width: 100%;
 			@media (max-width: 1023px){
 				height: 175px;
+				left: 0px;
 			}
 			p{
 				margin-left: 11px;
@@ -451,8 +454,7 @@ img{
 		display: none;
 	}
 .home-profile-left-column{
-	position: relative;
-	width: 100%;
+	
 	.profile-anchor-menu{
 		display: flex;
 		position: absolute;

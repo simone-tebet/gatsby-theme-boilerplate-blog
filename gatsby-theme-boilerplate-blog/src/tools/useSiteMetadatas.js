@@ -102,7 +102,7 @@ export const useSiteMetadatas = () =>
             )
           }
         }
-        imgHolder: file(relativePath: { eq: "boilerplate-squared.png" }) {
+        imgHolder: file(relativePath: { eq: "oval-logo.png" }) {
           childrenImageSharp {
             gatsbyImageData(
               width: 76

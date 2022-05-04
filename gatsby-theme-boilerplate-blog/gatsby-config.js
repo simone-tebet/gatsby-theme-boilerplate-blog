@@ -1,6 +1,6 @@
-const path = require('path')
-const rootDir = path.join(__dirname, '../')
-const businessInfos = require('./package.json')
+const path = require("path");
+const rootDir = path.join(__dirname, "../");
+const businessInfos = require("./package.json");
 
 module.exports = {
   siteMetadata: {
@@ -8,7 +8,7 @@ module.exports = {
     title: businessInfos.appName,
     description: businessInfos.description,
     author: businessInfos.author,
-    siteUrl: 'https://boilerplate-blog.netlify.app/',
+    siteUrl: "https://boilerplate-blog.netlify.app/",
     searchBaseUrl: businessInfos.searchBaseUrl,
     keywords: businessInfos.keywords,
     image: `${__dirname}/static/images/boilerplate-blog-logo.svg`,
@@ -37,7 +37,6 @@ module.exports = {
     `gatsby-layout-builder`,
     `gatsby-layout-builder-seo`,
     `gatsby-layout-builder-a11y`,
-    `gatsby-layout-builder-cursor`,
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -75,21 +74,21 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.resolve(__dirname, 'static/images/'),
+        path: path.resolve(__dirname, "static/images/"),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.resolve(rootDir, 'posts/images/'),
+        path: path.resolve(rootDir, "posts/images/"),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: path.resolve(rootDir, 'posts/'),
+        path: path.resolve(rootDir, "posts/"),
       },
     },
     `gatsby-plugin-mdx`,
@@ -113,16 +112,16 @@ module.exports = {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
-          '@BlockBuilder': path.resolve(__dirname, 'src/modules/block-builder'),
-          '@Posts': path.resolve(rootDir, 'posts'),
-          '@Content': path.resolve(rootDir, 'content'),
-          '@Images': path.resolve(__dirname, 'static/images'),
+          "@BlockBuilder": path.resolve(__dirname, "src/modules/block-builder"),
+          "@Posts": path.resolve(rootDir, "posts"),
+          "@Content": path.resolve(rootDir, "content"),
+          "@Images": path.resolve(__dirname, "static/images"),
         },
-        extensions: ['js', 'scss'],
+        extensions: ["js", "scss"],
       },
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
           include: /static\/images/, // See below to configure properly
@@ -141,4 +140,4 @@ module.exports = {
     },
     `gatsby-plugin-netlify-cms`,
   ],
-}
+};

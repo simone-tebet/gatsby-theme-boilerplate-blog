@@ -13,7 +13,7 @@ import MainTemplateWrapper from "@BlockBuilder/MainTemplateWrapper";
 import { defaultSchema } from "../configs/schemas";
 
 const IndexPage = props => {
-  const [btnRef, setBtnRef] = useState("btn01");
+  const [btnRef, setBtnRef] = useState(1);
   const handleSetBtnRef = ref => {
     setBtnRef(ref);
   };
@@ -54,7 +54,6 @@ const IndexPage = props => {
 
     x = [];
     postsList.map(e => {
-      console.log(e.node.frontmatter);
       if (e.node.frontmatter.homeHighlight === true) {
         x.push(e);
       }
@@ -107,21 +106,11 @@ const IndexPage = props => {
     homeHighlightPost[0].node.frontmatter.updatedModified
   );
   var now = new Date();
-  var newUpdatedTime =
-    Date.parse(homeHighlightPost[0].node.frontmatter.updated) / 1000;
-  var otherNewHour = new Date().getTime() / 1000 - 3600;
-  var nowDate = Date.now();
   var diff = parseInt((now - updatedDate) / 1000);
   var diffHours = parseInt(diff / 3600);
-  var diffMinutes = parseInt((diff / 60) % 60);
-  var hours = updatedDate.getHours();
-  var mins = updatedDate.getMinutes();
-  var secs = updatedDate.getSeconds();
 
   var difference_In_Time = now.getTime() - updatedDate.getTime();
   var difference_In_Days = difference_In_Time / (1000 * 60 * 60 * 24);
-  var difference_In_Seconds = difference_In_Time / 1000;
-  var difference_In_Minutes = difference_In_Time / (1000 * 60);
   var difference_In_Hours = difference_In_Time / (1000 * 60 * 60);
   var countOneDay = difference_In_Days >= 1 ? true : false;
 
@@ -150,11 +139,6 @@ const IndexPage = props => {
     if (minute === "60") {
       minute = "59";
     }
-
-    // Add Sign in final result
-
-    // Concate hours and minutes
-
     return returnType === "hours" ? hour : minute;
   }
 
@@ -188,25 +172,27 @@ const IndexPage = props => {
       </Row>
 
       <main className='main-container' id='site-content' role='list'>
-        <span id='perfil' />
         <HeadingBlock classes='m30auto hack' importance={10} width={400}>
           Simone Tebet
         </HeadingBlock>
         <Row opt={{ classes: "home-infos", isBoxed: true, role: "something" }}>
           <section className='main-page-wrapper'>
-            <Row opt={{ classes: "", numColumns: 2 }}>
+            <Row opt={{ classes: "main-row", numColumns: 2 }}>
               <div className='main-article'>
                 <h4>
-                  {homeHighlightPost[0].node.frontmatter.categories.map(el => {
-                    return (
-                      <Link
-                        to={"/category/" + el}
-                        className='main-article-categories'
-                      >
-                        {el}
-                      </Link>
-                    );
-                  })}
+                  {homeHighlightPost[0].node.frontmatter.categories.map(
+                    (el, key) => {
+                      return (
+                        <Link
+                          key={key}
+                          to={"/category/" + el}
+                          className='main-article-categories'
+                        >
+                          {el}
+                        </Link>
+                      );
+                    }
+                  )}
                 </h4>
                 <h1>
                   <Link to={homeHighlightPost[0].node.fields.slug}>
@@ -236,9 +222,9 @@ const IndexPage = props => {
                   </h2>
 
                   <ul>
-                    {homeHighlightRelatedListPost.map(e => {
+                    {homeHighlightRelatedListPost.map((e, k) => {
                       return (
-                        <li>
+                        <li key={k}>
                           <Link to={e.node.fields.slug}>
                             {e.node.frontmatter.title}
                           </Link>
@@ -299,16 +285,15 @@ const IndexPage = props => {
                       critical='true'
                       className={" profile-socials"}
                     />
+                    <span id='perfil' />
 
                     <div className='left-bottom'>
                       <ul className='profile-anchor-menu'>
                         <li>
                           <a
                             href='/#perfil'
-                            className={`btn01 ${
-                              btnRef === "btn01" ? "active" : ""
-                            }`}
-                            onClick={() => btnHandler("btn01")}
+                            className={`btn01 ${btnRef === 1 ? "active" : ""}`}
+                            onClick={() => btnHandler(1)}
                           >
                             Histórico
                           </a>
@@ -316,10 +301,8 @@ const IndexPage = props => {
                         <li>
                           <a
                             href='/#perfil'
-                            className={`btn02 ${
-                              btnRef === "btn02" ? "active" : ""
-                            }`}
-                            onClick={() => btnHandler("btn02")}
+                            className={`btn02 ${btnRef === 2 ? "active" : ""}`}
+                            onClick={() => btnHandler(2)}
                           >
                             Profissão
                           </a>
@@ -327,10 +310,8 @@ const IndexPage = props => {
                         <li>
                           <a
                             href='/#perfil'
-                            className={`btn03 ${
-                              btnRef === "btn03" ? "active" : ""
-                            }`}
-                            onClick={() => btnHandler("btn03")}
+                            className={`btn03 ${btnRef === 3 ? "active" : ""}`}
+                            onClick={() => btnHandler(3)}
                           >
                             Família
                           </a>
@@ -381,7 +362,7 @@ const IndexPage = props => {
                 >
                   <div
                     className={`home-profile-tab ${
-                      btnRef === "btn01" ? "" : "hide-me"
+                      btnRef === 1 ? "" : "hide-me"
                     }`}
                   >
                     <h2>Histórico</h2>
@@ -403,7 +384,7 @@ const IndexPage = props => {
                   </div>
                   <div
                     className={`home-profile-tab ${
-                      btnRef === "btn02" ? "" : "hide-me"
+                      btnRef === 2 ? "" : "hide-me"
                     }`}
                   >
                     <h2>Profissão</h2>
@@ -423,7 +404,7 @@ const IndexPage = props => {
                   </div>
                   <div
                     className={`home-profile-tab ${
-                      btnRef === "btn03" ? "" : "hide-me"
+                      btnRef === 3 ? "" : "hide-me"
                     }`}
                   >
                     <h2>Família Tebet</h2>

@@ -1,11 +1,13 @@
-import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-import Layout from 'gatsby-layout-builder'
-import HeadingBlock from '@BlockBuilder/HeadingBlock'
-import MainTemplateWrapper from '@BlockBuilder/MainTemplateWrapper'
-import PostsBlock from '@BlockBuilder/PostsBlock'
-import { useSiteMetadatas } from '../tools/useSiteMetadatas'
-import { defaultSchema } from '../configs/schemas'
+import React from "react";
+import { StaticQuery, graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
+import { Row } from "../components/InsertRow";
+import HeadingBlock from "@BlockBuilder/HeadingBlock";
+import MainTemplateWrapper from "@BlockBuilder/MainTemplateWrapper";
+import PostsBlock from "@BlockBuilder/PostsBlock";
+import { useSiteMetadatas } from "../tools/useSiteMetadatas";
+import { defaultSchema } from "../configs/schemas";
 
 const CategoryListPage = props => {
   return (
@@ -43,40 +45,65 @@ const CategoryListPage = props => {
         }
       `}
       render={data => {
-        const categoriesList = data.allMarkdownRemark.edges
-        const { site } = useSiteMetadatas()
-        const categoriesContext = props.pageContext.categories
+        const categoriesList = data.allMarkdownRemark.edges;
+
+        const { site, bannerContent, boilerplateLogo } = useSiteMetadatas();
+
+        const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
+        const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
+        const categoriesContext = props.pageContext.categories;
         const categoriesListFiltered = categoriesList.filter(item => {
-          return item.node.frontmatter.categories.includes(categoriesContext)
-        })
+          return item.node.frontmatter.categories.includes(categoriesContext);
+        });
         return (
           <MainTemplateWrapper
-            classes="blog-list"
+            classes='blog-list'
             seoSchema={defaultSchema(props.location)}
+            logo={
+              <GatsbyImage
+                image={logoQuery}
+                alt={"title"}
+                placeholder={"NONE"}
+                critical='true'
+                className={""}
+              />
+            }
           >
-            <main className="main-container" role="list">
-              <HeadingBlock classes="m30auto" importance={9} width={400}>
+            <Row
+              opt={{
+                classes: "banner colorME",
+                isBoxed: true,
+                role: "something",
+              }}
+            >
+              <GatsbyImage
+                image={imageQuery}
+                alt={"title"}
+                placeholder={"NONE"}
+                critical='true'
+                className={" banner-img"}
+              />
+            </Row>
+            <main className='main-container' role='list'>
+              <HeadingBlock classes='m30auto' importance={9} width={400}>
                 Posts da Categoria: {props.pageContext.categories}
               </HeadingBlock>
-              <Layout
-                type="ROW"
-                opt={{ isBoxed: true, classes: 'main-container-wrapper' }}
-              >
+              <Row opt={{ isBoxed: true, classes: "main-container-wrapper" }}>
                 <PostsBlock
                   postList={categoriesListFiltered}
                   postsPerPage={site.siteMetadata.postsPerPage}
-                  readMoreText="Ler Mais"
+                  readMoreText='Ler Mais'
                   pagination={{
                     loadMoreBtn: true,
-                    loadMore: 'Ler Mais',
+                    loadMore: "Ler Mais",
                   }}
                 />
-              </Layout>
+              </Row>
             </main>
           </MainTemplateWrapper>
-        )
+        );
       }}
     />
-  )
-}
-export default CategoryListPage
+  );
+};
+export default CategoryListPage;

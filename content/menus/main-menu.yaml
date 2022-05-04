@@ -4,16 +4,16 @@ menu:
   items:
     - item:
         label: Biografia
-        href: /biografia
+        to: /biografia/
     - item:
         label: Atos da Simone
-        href: /atos-simone
+        to: /atos-simone/
     - item:
         label: Discursos
-        href: /discursos
+        to: /discursos/
     - item:
         label: Contato
-        to: /contato
+        to: /contato/
     - item:
         icon: bag
     - item:
